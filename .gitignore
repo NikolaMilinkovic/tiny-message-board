@@ -1,0 +1,3 @@
+# ignored files / folder
+node_modules
+.env

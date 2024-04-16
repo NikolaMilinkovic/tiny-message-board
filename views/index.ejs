@@ -1,0 +1,57 @@
+<% const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium' }); %>
+<% const timeFormatter = new Intl.DateTimeFormat('en-GB', { timeStyle: 'short' }); %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="content-container">
+      <div class="headers">
+        <h1><%= title %></h1>
+        <p class="git">
+          Coded by  
+          <a href="https://github.com/NikolaMilinkovic">
+            <img class="git-logo" src="/images/github.svg" alt="github icon">
+            Nikola Milinkovic
+          </a>
+        </p>
+      </div>
+      <div class="content">
+        <div class="messages-container">
+          <ul>
+            <% messages.forEach(message => { %>
+              <li>
+                <div class="user-container">
+                  <p class="username"><%= message.name %></p>
+                  <p class="timestamp">
+                    at <%= timeFormatter.format(message.added)%> on <%= dateFormatter.format(message.added) %>
+                  </p>
+                </div>
+                <div class="msg-container">
+                  <p class="text"><%= message.text %></p>
+                </div>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+        <form method="POST" action="/">
+          <div class="inputs">
+            <div class="input-container">
+              <label for="message">Message</label>
+              <input type="text" id="message" name="message" placeholder="Message">
+            </div>
+      
+            <div class="input-container">
+              <label for="username">Insert name</label>
+              <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+          </div>
+          <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  </body>
+</html>
