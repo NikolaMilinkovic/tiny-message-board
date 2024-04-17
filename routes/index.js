@@ -9,7 +9,7 @@ router.get('/', async(req, res, next) => {
   try {
     const messages = await Message.find();
     console.log(messages)
-    res.render('index', { title: 'Mini Messageboard', messages: messages });
+    res.render('index', { title: 'Tiny Messageboard', messages: messages });
 
   } catch (error){
 
