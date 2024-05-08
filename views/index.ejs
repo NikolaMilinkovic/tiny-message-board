@@ -40,18 +40,24 @@
         <form method="POST" action="/">
           <div class="inputs">
             <div class="input-container">
-              <label for="message">Message</label>
-              <input type="text" id="message" name="message" placeholder="Message">
-            </div>
-      
-            <div class="input-container">
               <label for="username">Insert name</label>
               <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+
+            <div class="input-container">
+              <label for="message">Message</label>
+              <input type="text" id="message" name="message" placeholder="Message">
             </div>
           </div>
           <button type="submit">Send</button>
       </form>
     </div>
   </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username');
+    document.getElementById('username').value = username || '';
+  </script>
   </body>
 </html>

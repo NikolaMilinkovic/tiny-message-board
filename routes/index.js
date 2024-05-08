@@ -8,7 +8,6 @@ const formatter = new Intl.DateTimeFormat('sr-RS', { day: '2-digit', month: '2-d
 router.get('/', async(req, res, next) => {
   try {
     const messages = await Message.find();
-    console.log(messages)
     res.render('index', { title: 'Tiny Messageboard', messages: messages });
 
   } catch (error){
@@ -31,7 +30,7 @@ router.post('/', async (req, res) => {
     console.error('Writing to DB failed: ', error);
   }
 
-  res.redirect('/');
+  res.redirect(`/?username=${req.body.username}`);
 })
 
 module.exports = router;
