@@ -10,4 +10,4 @@ Leave your thoughts and best wishes at the link bellow!
 - Refresh messages on certain intervals
 
 ## 💻 Built With
-![javascript](https://skillicons.dev/icons?i=nodejs,express,ejs,js,mongodb,css&perline=10)
+![javascript](https://skillicons.dev/icons?i=nodejs,express,js,mongodb,css&perline=10)
