@@ -1,5 +1,3 @@
-![Example Image](./public/images/msg-board.png)
-
 # Tiny Message Board
 Small message board available to every user without registration.<br>
 Made with Node.js and Express framework.<br>
